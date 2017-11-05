@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 wcs_coav_flight:
     resource: "@WCSCoavBundle/Controller/FlightController.php"
     type:     annotation
@@ -15,8 +15,6 @@ wcs_coav:
     resource: "@WCSCoavBundle/Resources/config/routing.yml"
     prefix:   /
 
-=======
->>>>>>> e87948ce09d67d47f1bab433cf8c2dd37349bc17
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

@@ -3,6 +3,7 @@
 namespace WCS\CoavBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use WCS\CoavBundle\Entity\Flight;
 
 /**
  * Reservation
@@ -43,9 +44,8 @@ class Reservation
     private $passenger;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="flight", type="string", length=32)
+     * @ORM\ManyToOne(targetEntity="WCS\CoavBundle\Entity\Flight")
+     * @ORM\JoinColumn
      */
     private $flight;
 
@@ -57,10 +57,12 @@ class Reservation
     private $wasDone;
 
 
+
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -84,7 +86,7 @@ class Reservation
     /**
      * Get nbReservedSeats
      *
-     * @return int
+     * @return integer
      */
     public function getNbReservedSeats()
     {
@@ -140,30 +142,6 @@ class Reservation
     }
 
     /**
-     * Set flight
-     *
-     * @param string $flight
-     *
-     * @return Reservation
-     */
-    public function setFlight($flight)
-    {
-        $this->flight = $flight;
-
-        return $this;
-    }
-
-    /**
-     * Get flight
-     *
-     * @return string
-     */
-    public function getFlight()
-    {
-        return $this->flight;
-    }
-
-    /**
      * Set wasDone
      *
      * @param boolean $wasDone
@@ -180,11 +158,32 @@ class Reservation
     /**
      * Get wasDone
      *
-     * @return bool
+     * @return boolean
      */
     public function getWasDone()
     {
         return $this->wasDone;
     }
-}
 
+    /**
+     * Set flight
+     *
+     * @param string $flight
+     *
+     * @return Reservation
+     */
+    public function setFlight($flight)
+    {
+        $this->flight = $flight;
+        return $this;
+    }
+    /**
+     * Get flight
+     *
+     * @return string
+     */
+    public function getFlight()
+    {
+        return $this->flight;
+    }
+}

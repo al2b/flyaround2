@@ -1,0 +1,63 @@
+<?php
+
+namespace WCS\CoavBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use WCS\CoavBundle\Entity\Flight;
+
+/**
+ * Reservation
+ *
+ * @ORM\Table(name="reservation")
+ * @ORM\Entity(repositoryClass="WCS\CoavBundle\Repository\ReservationRepository")
+ */
+class Reservation
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="nbReservedSeats", type="smallint")
+     */
+    private $nbReservedSeats;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="publicationDate", type="datetime")
+     */
+    private $publicationDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="passenger", type="string", length=32)
+     */
+    private $passenger;
+
+    /**
+     * @var string
+     *
+     * @ORM\OneToOne(targetEntity="WCS\CoavBundle\Entity\Flight")
+     */
+    private $flight;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="wasDone", type="boolean")
+     */
+    private $wasDone;
+
+
+
+}
+

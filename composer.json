@@ -1,20 +1,14 @@
 {
-<<<<<<< HEAD
     "name": "anne-laure/flyaround2",
-=======
-    "name": "anne-laure/flyaround",
->>>>>>> e87948ce09d67d47f1bab433cf8c2dd37349bc17
+
     "license": "proprietary",
     "type": "project",
     "autoload": {
         "psr-4": {
-<<<<<<< HEAD
-            "AppBundle\\": "src/AppBundle",
-            "WCS\\": "src/WCS"
-=======
-            "AppBundle\\": "src/AppBundle"
->>>>>>> e87948ce09d67d47f1bab433cf8c2dd37349bc17
-        },
+
+            "AppBundle": "src/AppBundle",
+            "WCS": "src/WCS"},
+
         "classmap": [
             "app/AppKernel.php",
             "app/AppCache.php"
@@ -22,7 +16,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests": "tests/"
         },
         "files": [
             "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"

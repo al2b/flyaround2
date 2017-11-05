@@ -1,11 +1,9 @@
 <?php
 
 namespace WCS\CoavBundle\Form;
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
 class ReservationType extends AbstractType
 {
     /**
@@ -15,7 +13,7 @@ class ReservationType extends AbstractType
     {
         $builder->add('nbReservedSeats')->add('publicationDate')->add('passenger')->add('flight')->add('wasDone');
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -25,7 +23,6 @@ class ReservationType extends AbstractType
             'data_class' => 'WCS\CoavBundle\Entity\Reservation'
         ));
     }
-
     /**
      * {@inheritdoc}
      */
