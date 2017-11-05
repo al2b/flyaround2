@@ -186,4 +186,5 @@ class Reservation
     {
         return $this->flight;
     }
+
 }
